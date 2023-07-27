@@ -39,8 +39,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack() {
                 Text(NSLocalizedString("mouse_location", comment: ""))
+                Spacer()
                 Text(String(format: "%.0f", mouseLocation.x))
                 Text(",")
                 Text(String(format: "%.0f", mouseLocation.y))
@@ -48,12 +49,15 @@ struct ContentView: View {
             .onReceive(currentXYTimer) { _ in
                 mouseLocation = NSEvent.mouseLocation
             }
+            .padding()
+            
+            Divider().padding(.horizontal)
             
             HStack {
                 Toggle(isOn: $isCustomXY) {
                     Text(NSLocalizedString("customize_coordinates", comment: ""))
                 }
-                .padding()
+                Spacer()
                 TextField("", value: $clickX, format: .number)
                     .disabled(!isCustomXY)
                     .frame(width: 60)
@@ -65,37 +69,47 @@ struct ContentView: View {
             .disabled(isClicking)
             .safeAreaInset(edge: .bottom) {
                 Label(NSLocalizedString("customize_coordinates_info", comment: ""), systemImage: "info.circle")
-                    .padding(.top, -10)
+                    .padding(.top, 2)
             }
-            
+            .padding()
+
             HStack {
                 Text(NSLocalizedString("maximum_number_of_clicks", comment: ""))
+                Spacer()
                 TextField("", value: $clickMaxCount, format: .number)
                     .frame(width: 60)
             }
             .disabled(isClicking)
-            
+            .padding([.leading, .bottom, .trailing])
+
             HStack {
                 Text(NSLocalizedString("delay_between_clicks", comment: ""))
+                Spacer()
                 TextField("", value: $clickDelay, format: .number)
                     .frame(width: 60)
-                Text(NSLocalizedString("seconds", comment: ""))
             }
             .disabled(isClicking)
+            .padding([.leading, .bottom, .trailing])
             
             HStack {
-                Picker(NSLocalizedString("click_type", comment: ""), selection: $selectedClickType) {
+                Text(NSLocalizedString("click_type", comment: ""))
+                Spacer()
+                Picker("", selection: $selectedClickType) {
                     Text(NSLocalizedString("left_click", comment: "")).tag(ClickType.left)
                     Text(NSLocalizedString("right_click", comment: "")).tag(ClickType.right)
                 }
-                .frame(width: 200)
+                .frame(width: 100)
             }
             .disabled(isClicking)
+            .padding([.leading, .bottom, .trailing])
             
             HStack {
                 Toggle(isOn: $isClickingSound) {
                     Text(NSLocalizedString("clicking_sound", comment: ""))
                 }
+                
+                Spacer()
+                
                 Toggle(isOn: $isAlwaysOnTop) {
                     Text(NSLocalizedString("always_on_top", comment: ""))
                 } .onChange(of: isAlwaysOnTop) { _ in
@@ -111,11 +125,16 @@ struct ContentView: View {
                 }
             }
             .disabled(isClicking)
+            .padding([.leading, .bottom, .trailing])
+
             
             HStack {
                 Text(NSLocalizedString("already_clicked", comment: ""))
+                Spacer()
                 Text(String(format: "%d", clickCount))
             }
+            .padding([.leading, .bottom, .trailing])
+
             
             HStack {
                 Button{
@@ -124,31 +143,50 @@ struct ContentView: View {
                 } label: {
                     Label("\(NSLocalizedString("start", comment: "")) \(Image(systemName: "command")) + [", systemImage: "restart")
                 }
+                .controlSize(.large)
                 .disabled(isClicking)
+                
+                Spacer()
+                
                 Button {
                     // Stop
                     stopClick()
-                    
                 } label: {
                     Label("\(NSLocalizedString("stop", comment: "")) \(Image(systemName: "command")) + ]", systemImage: "stop")
                 }
+                .controlSize(.large)
                 .disabled(!isClicking)
             }
+            .padding([.leading, .bottom, .trailing])
+
             
-            HStack {
+            VStack {
                 Button {
                     openSecurityPreferences()
                 } label: {
                     Text(NSLocalizedString("open_accessibility", comment: ""))
+                        .underline()
                 }
+                .buttonStyle(.plain)
+                
+                Spacer()
+                
+                Button {
+                    NSWorkspace.shared.open(URL(string: "https://github.com/moluuser/Xclick")!)
+                } label: {
+                    Label("Star this App on GitHub", systemImage: "star.fill")
+                        .underline()
+                }
+                .buttonStyle(.plain)
             }
+            .padding()
         }
         .padding()
         .onAppear {
             hotkeyStart.keyDownHandler = startClick
             hotkeyStop.keyDownHandler = stopClick
         }
-        .frame(width: 300, height: 400)
+        .frame(width: 300, height: 500)
     }
 
     private func startClick() {
