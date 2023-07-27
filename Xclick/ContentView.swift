@@ -70,6 +70,7 @@ struct ContentView: View {
             .safeAreaInset(edge: .bottom) {
                 Label(NSLocalizedString("customize_coordinates_info", comment: ""), systemImage: "info.circle")
                     .padding(.top, 2)
+                    .font(.system(size: 10))
             }
             .padding()
 
@@ -168,6 +169,7 @@ struct ContentView: View {
                         .underline()
                 }
                 .buttonStyle(.plain)
+                .padding(.bottom, 5)
                 
                 Spacer()
                 

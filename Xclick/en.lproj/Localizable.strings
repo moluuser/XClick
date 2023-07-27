@@ -7,7 +7,7 @@
 */
 
 "customize_coordinates"="Customize Coordinates";
-"customize_coordinates_info"="If you don't check Customize Coordinates, it will click current position of the mouse.";
+"customize_coordinates_info"="Click the current location by default.";
 "maximum_number_of_clicks"="Maximum Number of Clicks";
 "delay_between_clicks"="Delay between Clicks (Seconds)";
 "seconds"="Seconds";

@@ -7,7 +7,7 @@
 */
 
 "customize_coordinates"="自定义坐标";
-"customize_coordinates_info"="如果您不选中自定义坐标，它将单击鼠标的当前位置。";
+"customize_coordinates_info"="默认将单击鼠标的当前位置。";
 "maximum_number_of_clicks"="最大点击次数";
 "delay_between_clicks"="点击之间的延迟 (秒)";
 "seconds"="秒";
