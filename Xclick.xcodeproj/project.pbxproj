@@ -52,8 +52,8 @@
 		86F1DF7B2A71FEC800ECEFB6 /* Xclick */ = {
 			isa = PBXGroup;
 			children = (
-				86F1DF7C2A71FEC800ECEFB6 /* XclickApp.swift */,
 				86F1DF7E2A71FEC800ECEFB6 /* ContentView.swift */,
+				86F1DF7C2A71FEC800ECEFB6 /* XclickApp.swift */,
 				86F1DF802A71FEC900ECEFB6 /* Assets.xcassets */,
 				86F1DF852A71FEC900ECEFB6 /* Xclick.entitlements */,
 				86F1DF822A71FEC900ECEFB6 /* Preview Content */,
