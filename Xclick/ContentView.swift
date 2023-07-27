@@ -15,7 +15,7 @@ struct ContentView: View {
     
     @State private var mouseLocation = NSEvent.mouseLocation
     
-    @State private var isCustiomXY = false
+    @State private var isCustomXY = false
     @State private var isClicking = false
     @State private var isClickingSound = true
     @State private var isAlwaysOnTop = false
@@ -49,47 +49,47 @@ struct ContentView: View {
             }
             
             HStack {
-                Toggle(isOn: $isCustiomXY) {
-                    Text("Customize Coordinates")
+                Toggle(isOn: $isCustomXY) {
+                    Text(NSLocalizedString("customize_coordinates", comment: ""))
                 }
                 .padding()
-                TextField("", value: $clickX, format: .number).disabled(!isCustiomXY)
+                TextField("", value: $clickX, format: .number).disabled(!isCustomXY)
                 Text(",")
-                TextField("", value: $clickY, format: .number).disabled(!isCustiomXY)
+                TextField("", value: $clickY, format: .number).disabled(!isCustomXY)
             }
             .disabled(isClicking)
             .safeAreaInset(edge: .bottom) {
-                Label("If you don't check Customize Coordinates, it will click current position of the mouse.", systemImage: "info.circle")
+                Label(NSLocalizedString("customize_coordinates_info", comment: ""), systemImage: "info.circle")
                     .padding(.top, -10)
             }
             
             HStack {
-                Text("Maximum Number of Clicks")
+                Text(NSLocalizedString("maximum_number_of_clicks", comment: ""))
                 TextField("", value: $clickMaxCount, format: .number)
             }
             .disabled(isClicking)
             
             HStack {
-                Text("Delay between Clicks")
+                Text(NSLocalizedString("delay_between_clicks", comment: ""))
                 TextField("", value: $clickDelay, format: .number)
-                Text("Seconds")
+                Text(NSLocalizedString("seconds", comment: ""))
             }
             .disabled(isClicking)
             
             HStack {
-                Picker("Select Click", selection: $selectedClickType) {
-                    Text("Left Click").tag(ClickType.left)
-                    Text("Right Click").tag(ClickType.right)
+                Picker(NSLocalizedString("click_type", comment: ""), selection: $selectedClickType) {
+                    Text(NSLocalizedString("left_click", comment: "")).tag(ClickType.left)
+                    Text(NSLocalizedString("right_click", comment: "")).tag(ClickType.right)
                 }
             }
             .disabled(isClicking)
             
             HStack {
                 Toggle(isOn: $isClickingSound) {
-                    Text("Clicking Sound")
+                    Text(NSLocalizedString("clicking_sound", comment: ""))
                 }
                 Toggle(isOn: $isAlwaysOnTop) {
-                    Text("Always on Top")
+                    Text(NSLocalizedString("always_on_top", comment: ""))
                 } .onChange(of: isAlwaysOnTop) { _ in
                     if isAlwaysOnTop {
                         for window in NSApplication.shared.windows {
@@ -105,7 +105,7 @@ struct ContentView: View {
             .disabled(isClicking)
             
             HStack {
-                Text("Already Made:")
+                Text(NSLocalizedString("already_clicked", comment: ""))
                 Text(String(format: "%d", clickCount))
             }
             
@@ -114,7 +114,7 @@ struct ContentView: View {
                     // Start
                     startClick()
                 } label: {
-                    Label("Start \(Image(systemName: "command")) + [", systemImage: "restart")
+                    Label("\(NSLocalizedString("start", comment: "")) \(Image(systemName: "command")) + [", systemImage: "restart")
                 }
                 .disabled(isClicking)
                 Button {
@@ -122,7 +122,7 @@ struct ContentView: View {
                     stopClick()
                     
                 } label: {
-                    Label("Stop \(Image(systemName: "command")) + ]", systemImage: "stop")
+                    Label("\(NSLocalizedString("stop", comment: "")) \(Image(systemName: "command")) + ]", systemImage: "stop")
                 }
                 .disabled(!isClicking)
             }
@@ -131,7 +131,7 @@ struct ContentView: View {
                 Button {
                     openSecurityPreferences()
                 } label: {
-                    Label("Open Security & Privacy Preferences", systemImage: "accessibility")
+                    Text(NSLocalizedString("open_accessibility", comment: ""))
                 }
             }
         }
@@ -192,7 +192,7 @@ struct ContentView: View {
             }
             
             var clickLocation: NSPoint = NSPoint(x: mouseLocation.x, y: CGFloat(height) - mouseLocation.y)
-            if isCustiomXY {
+            if isCustomXY {
                 clickLocation = NSPoint(x: clickX, y: Int(height) - clickY)
             }
             

@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Xclick
+
+  Created by Chenyang on 2023/7/27.
+  
+*/
+
+"customize_coordinates"="自定义坐标";
+"customize_coordinates_info"="如果您不选中自定义坐标，它将单击鼠标的当前位置。";
+"maximum_number_of_clicks"="最大点击次数";
+"delay_between_clicks"="点击之间的延迟";
+"seconds"="秒";
+"click_type"="点击方式";
+"left_click"="左键单击";
+"right_click"="右键单击";
+"clicking_sound"="点击音效";
+"always_on_top"="始终置顶";
+"already_clicked"="已点击";
+"open_accessibility"="打开辅助功能";
+"start"="开始";
+"stop"="终止";

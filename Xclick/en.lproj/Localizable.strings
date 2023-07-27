@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Xclick
+
+  Created by Chenyang on 2023/7/27.
+  
+*/
+
+"customize_coordinates"="Customize Coordinates";
+"customize_coordinates_info"="If you don't check Customize Coordinates, it will click current position of the mouse.";
+"maximum_number_of_clicks"="Maximum Number of Clicks";
+"delay_between_clicks"="Delay between Clicks";
+"seconds"="Seconds";
+"click_type"="Click Type";
+"left_click"="Left Click";
+"right_click"="Right Click";
+"clicking_sound"="Clicking Sound";
+"always_on_top"="Always on Top";
+"already_clicked"="Already Clicked";
+"open_accessibility"="Open Accessibility";
+"start"="Start";
+"stop"="Stop";
