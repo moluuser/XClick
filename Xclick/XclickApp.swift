@@ -15,6 +15,7 @@ struct XclickApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowResizability(.contentSize)
     }
 }
 

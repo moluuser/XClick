@@ -40,6 +40,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
+                Text(NSLocalizedString("mouse_location", comment: ""))
                 Text(String(format: "%.0f", mouseLocation.x))
                 Text(",")
                 Text(String(format: "%.0f", mouseLocation.y))
@@ -53,9 +54,13 @@ struct ContentView: View {
                     Text(NSLocalizedString("customize_coordinates", comment: ""))
                 }
                 .padding()
-                TextField("", value: $clickX, format: .number).disabled(!isCustomXY)
+                TextField("", value: $clickX, format: .number)
+                    .disabled(!isCustomXY)
+                    .frame(width: 60)
                 Text(",")
-                TextField("", value: $clickY, format: .number).disabled(!isCustomXY)
+                TextField("", value: $clickY, format: .number)
+                    .disabled(!isCustomXY)
+                    .frame(width: 60)
             }
             .disabled(isClicking)
             .safeAreaInset(edge: .bottom) {
@@ -66,12 +71,14 @@ struct ContentView: View {
             HStack {
                 Text(NSLocalizedString("maximum_number_of_clicks", comment: ""))
                 TextField("", value: $clickMaxCount, format: .number)
+                    .frame(width: 60)
             }
             .disabled(isClicking)
             
             HStack {
                 Text(NSLocalizedString("delay_between_clicks", comment: ""))
                 TextField("", value: $clickDelay, format: .number)
+                    .frame(width: 60)
                 Text(NSLocalizedString("seconds", comment: ""))
             }
             .disabled(isClicking)
@@ -81,6 +88,7 @@ struct ContentView: View {
                     Text(NSLocalizedString("left_click", comment: "")).tag(ClickType.left)
                     Text(NSLocalizedString("right_click", comment: "")).tag(ClickType.right)
                 }
+                .frame(width: 200)
             }
             .disabled(isClicking)
             
@@ -135,12 +143,14 @@ struct ContentView: View {
                 }
             }
         }
+        .padding()
         .onAppear {
             hotkeyStart.keyDownHandler = startClick
             hotkeyStop.keyDownHandler = stopClick
         }
+        .frame(width: 300, height: 400)
     }
-    
+
     private func startClick() {
         print("Start")
         isClicking = true
