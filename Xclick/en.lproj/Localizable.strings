@@ -6,10 +6,10 @@
   
 */
 
-"customize_coordinates"="Customize Coordinates";
+"customize_coordinates"="Customize";
 "customize_coordinates_info"="Click the current location by default.";
-"maximum_number_of_clicks"="Maximum Number of Clicks";
-"delay_between_clicks"="Delay between Clicks (Seconds)";
+"maximum_number_of_clicks"="Repeat";
+"delay_between_clicks"="Delay (Seconds)";
 "seconds"="Seconds";
 "click_type"="Click Type";
 "left_click"="Left Click";

@@ -67,11 +67,6 @@ struct ContentView: View {
                     .frame(width: 60)
             }
             .disabled(isClicking)
-            .safeAreaInset(edge: .bottom) {
-                Label(NSLocalizedString("customize_coordinates_info", comment: ""), systemImage: "info.circle")
-                    .padding(.top, 2)
-                    .font(.system(size: 10))
-            }
             .padding()
 
             HStack {
@@ -143,9 +138,15 @@ struct ContentView: View {
                     startClick()
                 } label: {
                     Label("\(NSLocalizedString("start", comment: "")) \(Image(systemName: "command")) + [", systemImage: "restart")
+                        .padding(.horizontal, 10)
+                        .frame(height: 60)
+                        .foregroundColor(.white)
+                        .background(Color.cyan)
+                        .cornerRadius(10)
                 }
                 .controlSize(.large)
                 .disabled(isClicking)
+                .buttonStyle(.plain)
                 
                 Spacer()
                 
@@ -154,12 +155,17 @@ struct ContentView: View {
                     stopClick()
                 } label: {
                     Label("\(NSLocalizedString("stop", comment: "")) \(Image(systemName: "command")) + ]", systemImage: "stop")
+                        .padding(.horizontal, 10)
+                        .frame(height: 60)
+                        .foregroundColor(.white)
+                        .background(Color.cyan)
+                        .cornerRadius(10)
                 }
                 .controlSize(.large)
                 .disabled(!isClicking)
+                .buttonStyle(.plain)
             }
             .padding([.leading, .bottom, .trailing])
-
             
             VStack {
                 Button {
@@ -176,7 +182,9 @@ struct ContentView: View {
                 Button {
                     NSWorkspace.shared.open(URL(string: "https://github.com/moluuser/Xclick")!)
                 } label: {
-                    Label("Star this App on GitHub", systemImage: "star.fill")
+                    Image(systemName: "star.fill")
+                        .renderingMode(.original)
+                    Text("Star this App on GitHub")
                         .underline()
                 }
                 .buttonStyle(.plain)
