@@ -139,7 +139,7 @@ struct ContentView: View {
                 } label: {
                     Label("\(NSLocalizedString("start", comment: "")) \(Image(systemName: "command")) + [", systemImage: "restart")
                         .padding(.horizontal, 10)
-                        .frame(height: 60)
+                        .frame(height: 70)
                         .foregroundColor(.white)
                         .background(Color.cyan)
                         .cornerRadius(10)
@@ -156,7 +156,7 @@ struct ContentView: View {
                 } label: {
                     Label("\(NSLocalizedString("stop", comment: "")) \(Image(systemName: "command")) + ]", systemImage: "stop")
                         .padding(.horizontal, 10)
-                        .frame(height: 60)
+                        .frame(height: 70)
                         .foregroundColor(.white)
                         .background(Color.cyan)
                         .cornerRadius(10)
@@ -172,19 +172,6 @@ struct ContentView: View {
                     openSecurityPreferences()
                 } label: {
                     Text(NSLocalizedString("open_accessibility", comment: ""))
-                        .underline()
-                }
-                .buttonStyle(.plain)
-                .padding(.bottom, 5)
-                
-                Spacer()
-                
-                Button {
-                    NSWorkspace.shared.open(URL(string: "https://github.com/moluuser/Xclick")!)
-                } label: {
-                    Image(systemName: "star.fill")
-                        .renderingMode(.original)
-                    Text("Star this App on GitHub")
                         .underline()
                 }
                 .buttonStyle(.plain)
