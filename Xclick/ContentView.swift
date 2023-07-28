@@ -8,6 +8,7 @@
 import SwiftUI
 import AudioToolbox
 import HotKey
+import Combine
 
 struct ContentView: View {
     let currentXYTimer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
@@ -26,6 +27,9 @@ struct ContentView: View {
     @State private var clickMaxCount = 0
     @State private var clickCount = 0
     @State private var clickDelay: Double = 1
+    
+    @State private var maxWidth = CGFloat(0)
+    @State private var maxHeight = CGFloat(0)
     
     enum ClickType {
         case left, right
@@ -61,10 +65,28 @@ struct ContentView: View {
                 TextField("", value: $clickX, format: .number)
                     .disabled(!isCustomXY)
                     .frame(width: 60)
+                    .textFieldStyle(.roundedBorder)
+                    .onReceive(Just(clickX)) { val in
+                        if val < 0 {
+                            clickX = 0
+                        }
+                        if val > Int(maxWidth) {
+                            clickX = Int(maxWidth)
+                        }
+                    }
                 Text(",")
                 TextField("", value: $clickY, format: .number)
                     .disabled(!isCustomXY)
                     .frame(width: 60)
+                    .textFieldStyle(.roundedBorder)
+                    .onReceive(Just(clickY)) { val in
+                        if val < 0 {
+                            clickY = 0
+                        }
+                        if val > Int(maxHeight) {
+                            clickX = Int(maxHeight)
+                        }
+                    }
             }
             .disabled(isClicking)
             .padding()
@@ -74,6 +96,12 @@ struct ContentView: View {
                 Spacer()
                 TextField("", value: $clickMaxCount, format: .number)
                     .frame(width: 60)
+                    .textFieldStyle(.roundedBorder)
+                    .onReceive(Just(clickMaxCount)) { val in
+                        if val < 0 {
+                            clickMaxCount = 0
+                        }
+                    }
             }
             .disabled(isClicking)
             .padding([.leading, .bottom, .trailing])
@@ -83,6 +111,12 @@ struct ContentView: View {
                 Spacer()
                 TextField("", value: $clickDelay, format: .number)
                     .frame(width: 60)
+                    .textFieldStyle(.roundedBorder)
+                    .onReceive(Just(clickDelay)) { val in
+                        if val < 0 {
+                            clickDelay = 0
+                        }
+                    }
             }
             .disabled(isClicking)
             .padding([.leading, .bottom, .trailing])
@@ -182,8 +216,31 @@ struct ContentView: View {
         .onAppear {
             hotkeyStart.keyDownHandler = startClick
             hotkeyStop.keyDownHandler = stopClick
+            
+            maxWidth = getWidth()
+            maxHeight = getHeigh()
         }
         .frame(width: 300, height: 500)
+    }
+    
+    private func getWidth() -> CGFloat {
+        if let screen = NSScreen.main {
+            let rect = screen.frame
+            let width = rect.size.width
+            
+            return width
+        }
+        return CGFloat(0)
+    }
+    
+    private func getHeigh() -> CGFloat {
+        if let screen = NSScreen.main {
+            let rect = screen.frame
+            let height = rect.size.height
+            
+            return height
+        }
+        return CGFloat(0)
     }
 
     private func startClick() {
