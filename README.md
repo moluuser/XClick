@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://file.moluuser.com/img/202307282049078.png" alt="Xclick" width="200">
   <br>
-  Xclick
+  Xclicker
   <br>
 </h1>
 
@@ -20,7 +20,7 @@ Also add the current program in the Accessibility settings to run successfully.
 同时在辅助功能设置中添加当前程序，即可成功运行。
 
 <h1 align="center">
-  <img src="https://file.moluuser.com/img/202307282104105.png" alt="Xclick" width="400">
+  <img src="https://file.moluuser.com/img/202307282104105.png" alt="Xclicker" width="400">
 </h1>
 
 If `Customize` is unchecked, the program will default to clicking the mouse's current position.

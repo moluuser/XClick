@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "86F1DF782A71FEC800ECEFB6"
-               BuildableName = "Xclick.app"
-               BlueprintName = "Xclick"
-               ReferencedContainer = "container:Xclick.xcodeproj">
+               BuildableName = "Xclicker.app"
+               BlueprintName = "Xclicker"
+               ReferencedContainer = "container:Xclicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86F1DF782A71FEC800ECEFB6"
-            BuildableName = "Xclick.app"
-            BlueprintName = "Xclick"
-            ReferencedContainer = "container:Xclick.xcodeproj">
+            BuildableName = "Xclicker.app"
+            BlueprintName = "Xclicker"
+            ReferencedContainer = "container:Xclicker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86F1DF782A71FEC800ECEFB6"
-            BuildableName = "Xclick.app"
-            BlueprintName = "Xclick"
-            ReferencedContainer = "container:Xclick.xcodeproj">
+            BuildableName = "Xclicker.app"
+            BlueprintName = "Xclicker"
+            ReferencedContainer = "container:Xclicker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

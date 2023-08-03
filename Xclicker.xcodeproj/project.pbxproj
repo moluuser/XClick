@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		86F1DF792A71FEC800ECEFB6 /* Xclick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xclick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F1DF792A71FEC800ECEFB6 /* Xclicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xclicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F1DF7C2A71FEC800ECEFB6 /* XclickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XclickApp.swift; sourceTree = "<group>"; };
 		86F1DF7E2A71FEC800ECEFB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86F1DF802A71FEC900ECEFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		86F1DF7A2A71FEC800ECEFB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86F1DF792A71FEC800ECEFB6 /* Xclick.app */,
+				86F1DF792A71FEC800ECEFB6 /* Xclicker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86F1DF782A71FEC800ECEFB6 /* Xclick */ = {
+		86F1DF782A71FEC800ECEFB6 /* Xclicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86F1DF882A71FEC900ECEFB6 /* Build configuration list for PBXNativeTarget "Xclick" */;
+			buildConfigurationList = 86F1DF882A71FEC900ECEFB6 /* Build configuration list for PBXNativeTarget "Xclicker" */;
 			buildPhases = (
 				86F1DF752A71FEC800ECEFB6 /* Sources */,
 				86F1DF762A71FEC800ECEFB6 /* Frameworks */,
@@ -90,12 +90,12 @@
 			);
 			dependencies = (
 			);
-			name = Xclick;
+			name = Xclicker;
 			packageProductDependencies = (
 				86F1DF922A727EF900ECEFB6 /* HotKey */,
 			);
 			productName = Xclick;
-			productReference = 86F1DF792A71FEC800ECEFB6 /* Xclick.app */;
+			productReference = 86F1DF792A71FEC800ECEFB6 /* Xclicker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +113,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86F1DF742A71FEC800ECEFB6 /* Build configuration list for PBXProject "Xclick" */;
+			buildConfigurationList = 86F1DF742A71FEC800ECEFB6 /* Build configuration list for PBXProject "Xclicker" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86F1DF782A71FEC800ECEFB6 /* Xclick */,
+				86F1DF782A71FEC800ECEFB6 /* Xclicker */,
 			);
 		};
 /* End PBXProject section */
@@ -292,10 +292,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Xclick/Xclick.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Xclick/Preview Content\"";
+				DEVELOPMENT_TEAM = DF2F9U28A7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -306,7 +308,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.moluuser.Xclick;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moluuser.xclicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -319,10 +321,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Xclick/Xclick.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Xclick/Preview Content\"";
+				DEVELOPMENT_TEAM = DF2F9U28A7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -333,7 +337,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.moluuser.Xclick;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moluuser.xclicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86F1DF742A71FEC800ECEFB6 /* Build configuration list for PBXProject "Xclick" */ = {
+		86F1DF742A71FEC800ECEFB6 /* Build configuration list for PBXProject "Xclicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86F1DF862A71FEC900ECEFB6 /* Debug */,
@@ -352,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86F1DF882A71FEC900ECEFB6 /* Build configuration list for PBXNativeTarget "Xclick" */ = {
+		86F1DF882A71FEC900ECEFB6 /* Build configuration list for PBXNativeTarget "Xclicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86F1DF892A71FEC900ECEFB6 /* Debug */,
